@@ -25,7 +25,7 @@ async function bootstrap() {
   app.useGlobalGuards(new ProtectGuardStep1(reflector));
 
   const config = new DocumentBuilder()
-    .setTitle('Cats example')
+    .setTitle('Cyber Commiunity')
     .setDescription('The cats API description')
     .setVersion('1.0')
     .addBearerAuth()
@@ -42,4 +42,3 @@ async function bootstrap() {
   });
 }
 bootstrap();
-
