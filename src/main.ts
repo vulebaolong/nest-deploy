@@ -42,10 +42,3 @@ async function bootstrap() {
   });
 }
 bootstrap();
-
-
-
-
-// ákjdákjdhád
-
-// áđâsd
