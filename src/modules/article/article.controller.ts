@@ -13,6 +13,7 @@ import { Request } from 'express';
 import { User } from 'src/common/decorator/user.decorator';
 import { Users } from 'generated/prisma';
 import { QueryDto } from './dto/query.dto';
+import { ApiBearerAuth } from '@nestjs/swagger';
 
 // localhost:3069/article/article
 @Controller('article')
@@ -20,6 +21,7 @@ export class ArticleController {
   constructor(private readonly articleService: ArticleService) {}
 
   @Get()
+  @ApiBearerAuth()
   async findAll(
     @Query()
     query: QueryDto,
@@ -36,7 +38,7 @@ export class ArticleController {
   ) {
     // console.log({ query, params, headers, body, req });
     // console.log(req);
-    console.log("---------- Controller => Service ---------- ");
+    console.log('---------- Controller => Service ---------- ');
     const data = await this.articleService.findAll(req, user);
     return data;
   }
